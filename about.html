@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <header>
+        <nav>
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact Me</a>
+    </nav>
+    <br>
+    <br>
+    </header>
+    <p>My name is Fortune Chiweyu, and here is my story. </p>
+<br>
+<br>
+    <div class="container">
+       <div class="image">
+            <img src="I7.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="I6.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="I8.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="I2.jpg" alt="">
+        </div>
+
+        <div class="button">
+            <a onclick="nextimg(-1)" class="prev">❮</a>
+            <a onclick="nextimg(1)" class="next">❯</a>
+        </div>
+
+        <div class="dots">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            
+        </div>
+    </div>
+
+    <script>
+
+        var imageno =1;
+        displayimg(imageno);
+
+        function nextimg(n){
+            displayimg(imageno += n)
+        }
+
+        function currentSlide(n){
+            displayimg(imageno = n)
+        }
+
+        function displayimg(n){
+            var i;
+            var image = document.getElementsByClassName("image");
+            var dots = document.getElementsByClassName("dot");
+
+            if(n > image.length){
+                imageno = 1;
+            }
+
+            if(n < 1){
+                imageno = image.length;
+            }
+
+            for(i=0; i < image.length; i++){
+                image[i].style.display = "none";
+            }
+
+            for(i=0; i < dots.length; i++){
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            image[imageno - 1].style.display ="block";
+            dots[imageno - 1].className += " active";
+
+        }
+
+    </script>
+    <br>
+    <p>I started animating some years ago and I have a great passion for animating. I've been working on some short movies and one is coming soon. for more updates, subscribe to my YouTube channel.</p>
+<br>
+<div class="img">
+<img src="image3.jpg" style="height: 300px; width: 300px;
+   border: none;
+    border-radius: 15px;" alt="">
+<br>
+<br>
+ <p>Begin your journey through the world of animation crafted by Fortune. Explore a collection that merges creativity with storytelling, offering a glimpse into the artistry and vision behind each animated piece. Step into the realm where imagination meets motion.</p>
+ <br>
+ <img src="image6.jpg" style="height: 300px; width: 300px;
+   border: none;
+    border-radius: 15px;" alt="">
+<br>
+<br>
+<p> Here, I invite you to delve into a portfolio brimming with animated creations. Each piece is a testament to passion, skill, and the ability to breathe life into stories through animation. Immerse yourself in a universe where creativity takes flight and motion paints narratives. Uncover the essence of my artistic journey through animation. </p>
+</div>
+<style>
+body {
+    font-family: "Ubuntu", sans-serif;
+    background-color: bisque;
+}
+.img {
+    text-align: center;
+ 
+}
+header {
+    text-align: right;
+     }
+     nav {
+    color: black;
+    padding: 14px 20px;
+    text-align: right;
+
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    margin: 0 10px;
+}
+nav a:hover {
+    background-color: #02c4ff;
+    color: black;
+    padding: 5px 10px;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.2s;
+     }
+a {
+    text-decoration: none;
+}
+.btn {
+    text-align: center;
+    margin-top: 0;
+}
+button {
+    padding: 1rem;
+    border-radius: 15px;
+    color: black;
+    background-color: #BCE3C5;
+    text-align: center;
+    cursor: pointer;
+    
+}
+button:hover {
+    background-color: blue;
+    transition: 0.3s;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: bisque;
+}
+
+.container{
+    width: 80%;
+    height: 80vh;
+    margin: auto;
+    position: relative;
+}
+
+.container .image{
+    display: none;
+}
+
+.container .image img{
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.container .button{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 5;
+}
+
+.container .button a{
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    vertical-align: middle;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    background: rgba(0, 0, 0, 0.8);
+    font-size: 20px;
+    user-select: none;
+}
+
+.container .button .prev{
+    border-radius: 0 5px 5px 0;
+}
+
+.container .button .next{
+    border-radius: 5px 0 0 5px;
+}
+
+.dots{
+    text-align: center;
+    position: absolute;
+    bottom: 8px;
+    left: 45%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 5px 10px;
+    height: 30px;
+    border-radius: 15px;
+
+}
+
+.dot{
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #bbb;
+    display: inline-block;
+    margin: 0 2px;
+}
+
+.active, .dot:hover{
+    background-color: #02c4ff;
+}
+img {
+    height: 3rem;
+    width: 3rem;
+    padding: 7px;
+}
+.social {
+    text-align: center;
+}
+footer {
+    padding: 1rem;
+    background-color: black;
+    color: bisque;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+ }
+ @media all and (max-width: 330px) {
+    body {
+        display: block;
+    }
+}
+</style>
+<footer>
+    <div class="social">
+   <a href="https://www.youtube.com/watch?v=o59p62_rgQw">
+    <img src="yt.jpg" alt="YouTube">
+   </a>
+<a href="https://www.facebook.com/profile.php?id=100086856844117">
+    <img src="fb.jpg" alt="Facebook">
+</a>
+    </div>
+    <h5>&copy; 2024 Fortune Chiweyu</h5>
+</footer>
+    </body>
+</html>

@@ -1,0 +1,99 @@
+body {
+    font-family: "Ubuntu", sans-serif;
+    background-color: bisque;
+     }
+img {
+    height: 20rem;
+}
+header {
+    text-align: right;
+}
+.container {
+    text-align: right;
+    height: 100vh;
+}
+.circle-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin: 10px;
+    object-fit: cover;
+    display: inline-block;
+}
+nav {
+    color: black;
+    padding: 14px 20px;
+    text-align: right;
+
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    margin: 0 10px;
+}
+nav a:hover {
+    background-color: #02c4ff;
+    color: black;
+    padding: 5px 10px;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.2s;
+     }
+a {
+    text-decoration: none;
+}
+.btn {
+    text-align: center;
+    margin-top: 0;
+}
+button {
+    padding: 1rem;
+    border-radius: 15px;
+    color: black;
+    background-color: burlywood;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+}
+button:hover {
+    background-color:  #02c4ff;
+    transition: 0.3s;
+}
+img {
+    height: 2rem;
+    width: 2rem;
+    padding: 7px;
+}
+.social {
+    text-align: center;
+}
+footer {
+    padding: 1rem;
+    background-color: black;
+    color: bisque;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+ }
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+} 
+#slide-in {
+    animation: slideIn 1s ease forwards;
+}
+@media all and (max-width: 330px) {
+    body {
+        display: flex;
+    }
+}
